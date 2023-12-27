@@ -1,0 +1,64 @@
+﻿@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+
+<html class="h-100" lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Login</title>
+	<!-- Favicon icon -->
+	<link rel="icon" type="image/png" sizes="16x16" href="~/images/favicon.png">
+	<link href="~/css/style.css" rel="stylesheet">
+	<link href="~/css/login.css" rel="stylesheet" />
+</head>
+
+<body>
+
+	<div class="box">
+		<div class="form">
+			<div>
+				<img src="https://www.orionpos.com/img/logowhite.png" width="200" />
+				<h4 style="color:white;"><sub><i>17. Yıl</i></sub></h4>
+			</div>
+			<div class="inputBox">
+				<input id="email" tpye="text" required="required" />
+				<span>Email or Username</span>
+				<i></i>
+			</div>
+			<div class="inputBox">
+				<input id="password" type="password" required="required" />
+				<span>Password</span>
+				<i></i>
+
+			</div>
+
+			<div class="inputBox">
+				<div class="col col-3">
+					<h6 style="color:white;">Beni Hatırla</h6>
+				</div>
+				<div class="col col-1">
+					<input type="checkbox" id="rememberMe" />
+				</div>
+			</div>
+			<input type="button" value="Log In" onclick="Login.onLoginClick();" />
+		</div>
+	</div>
+	<!--**********************************
+		Scripts
+	***********************************-->
+	<script src="~/plugins/common/common.min.js"></script>
+	<script src="~/js/Core.js"></script>
+	<script src="~/js/JsOfPage/Login.js"></script>
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+	<script>
+		Login.init();
+	</script>
+
+</body>
+</html>

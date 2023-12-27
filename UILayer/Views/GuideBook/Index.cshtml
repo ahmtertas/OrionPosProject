@@ -1,0 +1,100 @@
+﻿@{
+	ViewData["Title"] = "GuideBook Page";
+}
+
+<div class="row">
+	<div class="col-12">
+		<div class="card">
+			<div class="card-body">
+				<h4 class="card-title">Rehber Tablosu</h4>
+				<button type="button" class="btn btn-success" data-toggle='modal' data-target='#ekleModal' data-whatever='getbootstrap'>Yeni Ekle</button>
+				<hr />
+				<div class="table-responsive">
+					<table id="rehberTablo" class="table table-striped table-bordered zero-configuration">
+						<thead>
+							<tr>
+								<th>Ad  </th>
+								<th>Soyad</th>
+								<th>Telefon No</th>
+								<th>Güncelle</th>
+								<th>Sil</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				<div class="bootstrap-modal">
+					<div class="modal fade" id="guncelleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel"> Telefonu Güncelle</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">×</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<label class="box-title m-t-30">Adı</label>
+									<input type="text" class="form-control data-filter" id="firtName_input">
+
+									<label class="box-title m-t-30">Soyadı</label>
+									<input type="text" class="form-control data-filter" id="lastName_input">
+
+									<label class="box-title m-t-30">Telefon No</label>
+									<input type="text" class="form-control data-filter" id="phoneNumber_input">
+									<input style="display:none;" type="text" class="form-control data-filter" id="recordId_input">
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+									<button type="button" class="btn btn-primary" onclick="GuideBook.modifyGuide()" id="update-buton" data-dismiss="modal">Güncelle</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bootstrap-modal">
+					<div class="modal fade" id="ekleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel"> Telefon Ekle</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">×</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<label class="box-title m-t-30">Adı</label>
+									<input type="text" class="form-control data-filter" id="ekle_firtName_input">
+
+									<label class="box-title m-t-30">Soyadı</label>
+									<input type="text" class="form-control data-filter" id="ekle_lastName_input">
+
+									<label class="box-title m-t-30">Telefon No</label>
+									<input type="text" class="form-control data-filter" id="ekle_phoneNumber_input">
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+									<button type="button" class="btn btn-primary" onclick="GuideBook.insertGuide()" id="insert-buton" data-dismiss="modal">Ekle</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="~/js/JsOfPage/GuideBook.js"></script>
+<script src="~/plugins/common/common.min.js"></script>
+<script src="~/js/Core.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/plugins/raphael/raphael.min.js"></script>
+<script src="~/plugins/morris/morris.min.js"></script>
+<script src="~/plugins/moment/moment.min.js"></script>
+<!-- ChartistJS -->
+<script src="~/plugins/tables/js/jquery.dataTables.min.js"></script>
+<script src="~/plugins/tables/js/datatable/dataTables.bootstrap4.min.js"></script>
+<script src="~/plugins/tables/js/datatable-init/datatable-basic.min.js"></script>
+
+<script>
+	GuideBook.init();
+</script>

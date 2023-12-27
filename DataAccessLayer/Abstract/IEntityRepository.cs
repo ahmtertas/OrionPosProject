@@ -6,7 +6,7 @@ namespace DataAccessLayer.Abstract
 	{
 		IEnumerable<TEntity> GetAll(Expression<Func<TEntity, bool>> filter = null);
 		TEntity GetById(Expression<Func<TEntity, bool>> filter);
-		void Delete(int id);
+		void Delete(TEntity entity);
 		void Update(TEntity entity);
 		void Insert(TEntity entity);
 	}
